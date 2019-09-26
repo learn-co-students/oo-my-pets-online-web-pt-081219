@@ -34,7 +34,7 @@ def self.reset_all
 end
 
 def cats 
-  Cats.all.select {|owner| owner.true?}
+  Cat.all.select {|c| c.name}
  
 end
 end
