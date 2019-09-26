@@ -80,9 +80,18 @@ end
 end
 
  def sell_pets
- Dog.all.collect {|dog| dog.owner == self } 
-       dog.mood = "nervous"
-  owner = nil
+# Dog.all.collect {|dog| dog.owner == self } 
+#       dog.mood = "nervous"
+#   owner = nil
+#   end
+# end
+
+ @pets.each do |type, name_array|
+      name_array.each do |pet|
+        pet.mood = "nervous"
+      end 
+    end
+    @pets = {}
   end
-end
+
 
