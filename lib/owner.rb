@@ -33,5 +33,12 @@ def self.reset_all
  @@all.clear 
 end
 
-
+def cats 
+  Cats.all.select {|owner| owner.true?}
+ 
 end
+end
+
+
+
+

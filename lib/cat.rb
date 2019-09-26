@@ -19,7 +19,4 @@ def self.all
   @@all
 end
 
-def self
-  self.all.collection 
-end
 end
