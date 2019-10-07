@@ -34,31 +34,32 @@ class Owner
     Dog.all.select {|dog| dog.owner == self}
   end
   
-  def buy_cat
-    #can buy a cat that is an instance in Cat Class
-    #knows about its cats
+  def buy_cat(name)
+    cat = Cat.new(name, self)
   end
   
-  def buy_dog
-    #same for dog
+  def buy_dog(name)
+    dog = Dog.new(name, self)
   end
   
   def walk_dogs
-    #mood happy
+    self.dogs.each {|dog| dog.mood = "happy"}
   end
   
   def feed_cats
-    #mood happy
+    self.cats.each {|cat| cat.mood = "happy"}
   end
   
   def sell_pets
-    #can sell all pets
-    #mood nervous
-    #leaves them without owner
+    pets = self.dogs + self.cats
+    pets.each do |pet|
+      pet.mood = "nervous"
+      pet.owner = nil
+    end
   end
   
   def list_pets
-    #list all pets
+    "I have #{self.dogs.count} dog(s), and #{self.cats.count} cat(s)."
   end
   
 end
